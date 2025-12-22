@@ -477,7 +477,7 @@ footer p {
 }
 
 .contact-button {
-    padding: 0.6rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     background-color: transparent;
     color: var(--color-accent);
     border: 2px solid var(--color-accent);
@@ -485,6 +485,7 @@ footer p {
     font-weight: 500;
     transition: all 0.2s ease;
     display: inline-block;
+    font-size: 0.95rem;
 }
 
 .contact-button:hover {
