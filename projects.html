@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Nakyeong Kim</title>
+    <meta name="description" content="Project portfolio of Nakyeong Kim">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Nakyeong Kim</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="projects-gallery">
+            <div class="container">
+                <!-- Gallery View -->
+                <div id="gallery-view">
+                    <h1>All Projects</h1>
+                    <p class="page-intro">Click on any project to learn more about my work.</p>
+
+                    <div class="gallery-grid">
+                        <!-- Reordered Project Cards -->
+                        <div class="gallery-card" onclick="showProject('project6')">
+                            <div class="gallery-image">
+                                <img src="images/GBH.png" alt="GBH Medical Debt" class="project-thumbnail">
+                            </div>
+                            <h3>GBH: Medical Debt Investigation</h3>
+                            <p class="gallery-meta">Boston University | 2025</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project9')">
+                            <div class="gallery-image">
+                                <img src="images/synCUTE.png" alt="synCute" class="project-thumbnail">
+                            </div>
+                            <h3>SYN-CUTE: Generate Images with DDPM</h3>
+                            <p class="gallery-meta">Boston University | 2025</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project8')">
+                            <div class="gallery-image">
+                                <img src="images/AIEthics.png" alt="AI Ethics" class="project-thumbnail">
+                            </div>
+                            <h3>LLM Measurements for AI Ethics</h3>
+                            <p class="gallery-meta">Boston University | 2025</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project11')">
+                            <div class="gallery-image">
+                                <img src="images/brainwave.png" alt="Brainwave Radio" class="project-thumbnail">
+                            </div>
+                            <h3>Brainwave Radio</h3>
+                            <p class="gallery-meta">Mindful Makers Hackathon | 2025</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project12')">
+                            <div class="gallery-image">
+                                <img src="images/moneyball.png" alt="Research Moneyball" class="project-thumbnail">
+                            </div>
+                            <h3>ForesightX: Research Moneyball</h3>
+                            <p class="gallery-meta">DS+X Hackathon | 2025</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project1')">
+                            <div class="gallery-image">
+                                <img src="images/Satellite.png" alt="Satellite Networks" class="project-thumbnail">
+                            </div>
+                            <h3>Satellite Networks for Galaxy S25</h3>
+                            <p class="gallery-meta">Samsung Electronics | 2024-2025</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project2')">
+                            <div class="gallery-image">
+                                <img src="images/LiveTranslate.png" alt="Live Translate" class="project-thumbnail">
+                            </div>
+                            <h3>Live Translate for VoIP Apps for Galaxy Z Flip 6, Fold 6</h3>
+                            <p class="gallery-meta">Samsung Electronics | 2024</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project3')">
+                            <div class="gallery-image">
+                                <img src="images/GalaxyS25.png" alt="Call Assistant" class="project-thumbnail">
+                            </div>
+                            <h3>Call Auto Answer Assistant for Galaxy S24 and earlier models (China)</h3>
+                            <p class="gallery-meta">Samsung Electronics | 2024</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project4')">
+                            <div class="gallery-image">
+                                <img src="images/SPAM.png" alt="SPAM Prevention" class="project-thumbnail">
+                            </div>
+                            <h3>SPAM/SCAM Prevention for Galaxy S24 and earlier models (China)</h3>
+                            <p class="gallery-meta">Samsung Electronics | 2024</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project5')">
+                            <div class="gallery-image">
+                                <img src="images/VREW.png" alt="Vrew Taiwan" class="project-thumbnail">
+                            </div>
+                            <h3>New Market Launch for Vrew</h3>
+                            <p class="gallery-meta">VoyagerX | 2021</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project7')">
+                            <div class="gallery-image">
+                                <img src="images/VREW_tutorial.png" alt="Vrew Tutorials" class="project-thumbnail">
+                            </div>
+                            <h3>Localization for Taiwanese Users</h3>
+                            <p class="gallery-meta">VoyagerX | 2021</p>
+                        </div>
+
+                        <div class="gallery-card" onclick="showProject('project10')">
+                            <div class="gallery-image">
+                                <img src="images/vflat.png" alt="User Analysis" class="project-thumbnail">
+                            </div>
+                            <h3>User Analysis for vFlat and Ownglyph</h3>
+                            <p class="gallery-meta">VoyagerX | 2021</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Detail View -->
+                <div id="project-detail-view" style="display:none;">
+                    <div class="project-main-content" id="project-content">
+                        <!-- Content populated dynamically -->
+                    </div>
+
+                    <div class="back-link">
+                        <button class="back-to-gallery" onclick="showGallery()">← Back to All Projects</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Last Updated: December 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        const projects = {
+            project1: {
+                title: "Satellite Networks for Galaxy S25 Series, Fold7, and Flip7",
+                meta: "Samsung Electronics | 2024-2025",
+                overview: "As one of 3 product managers in a team of over 100 collaborators, co-led the design and implementation of satellite network features for Samsung's flagship Galaxy devices, enabling users to send messages and make emergency calls even in areas without cellular coverage.",
+                responsibilities: [
+                    "Designed comprehensive user journey steps and screens for a new feature, satellite networks, targeting 165M market opportunity.",
+                    "Tailored user flows to accommodate different carrier infrastructures (T-Mobile, Verizon, CTC), different satellite specs(Starlink, Skylo, Tiantong) and different device models (bar, foldable).",
+                    "Coordinated with hardware, software, design, and partnership teams across multiple regions."
+                ],
+                skills: {
+                    technical: ["UX Design", "User Journey Mapping", "Prototyping", "Data Analysis"],
+                    collaboration: ["Cross-functional team coordination", "Stakeholder management", "International partnerships"]
+                },
+                links: [
+                    { text: "T-Mobile", url: "https://www.t-mobile.com/coverage/satellite-phone-service" },
+                    { text: "Verizon", url: "https://www.verizon.com/wireless-devices/smartphones/messages-via-satellite/" },
+                    { text: "CTC", url: "https://www.bonchip.com.cn/en/Success-Stories/64.html" }
+                ],
+                shortTitle: "Satellite Networks for Galaxy S25"
+            },
+            project2: {
+                title: "Live Translate for VoIP Apps for Galaxy Z Flip 6, Fold 6",
+                meta: "Samsung Electronics | 2024",
+                overview: "Implemented and expanded Samsung's AI-powered Live Translate feature to support third-party VoIP applications, breaking down language barriers in real-time video and voice calls.",
+                responsibilities: [
+                    "Analyzed call patterns before and after the feature launch.",
+                    "Test and validated the feature, including possible hallucination cases, and implemented necessary safety measures.",
+                    "Proposed UX adjustments for each VoIP app for better user experience, including WhatsApp, Google Meet, and KakaoTalk.",
+                    "Closley collaborated with design and software teams to implement the feature, achieving ~3% existing Galaxy S Series user adoption."
+                ],
+                skills: {
+                    technical: ["SQL", "Python", "Data Analysis", "AI Feature Design"],
+                    collaboration: ["Product management", "UX research", "Cross-platform integration"]
+                },
+                links: [
+                    { text: "How-To", url: "https://youtu.be/pjO51vbbCRY?si=dKKgnFYtHtz6vLuz" },
+                    { text: "AD", url: "https://youtube.com/shorts/wC5VoVBPYyE?si=B_LuHvbTfmUnu9YQ" }
+                ],
+                shortTitle: "Live Translate for VoIP Apps"
+            },
+            project3: {
+                title: "Call Auto Answer Assistant for Galaxy S24 and earlier models (China)",
+                meta: "Samsung Electronics | 2024",
+                overview: "Designed and launched an AI-driven call assistant feature specifically tailored for the Chinese market.",
+                responsibilities: [
+                    "Led cross-regional collaboration with multiple China subsidiaries to close the key gap with competitors in the market.",
+                    "Designed user journey flows for Chinese communication patterns with distinct requirements from Chinese government.",
+                    "Tested and validated the feature, including possible hallucination cases, and implemented necessary safety measures."
+                ],
+                skills: {
+                    technical: ["UX Design", "AI Feature Design", "Localization", "Data Analysis", "Mandarin Language"],
+                    collaboration: ["Cross-regional team management", "Cultural adaptation", "Privacy compliance"]
+                },
+                links: [],
+                shortTitle: "Call Auto Answer Assistant"
+            },
+            project4: {
+                title: "SPAM/SCAM Prevention for Galaxy S24 and earlier models (China)",
+                meta: "Samsung Electronics | 2024",
+                overview: "Co-led the development of an advanced spam and scam prevention system for the Galaxy S25 series in China.",
+                responsibilities: [
+                    "Conducted in-depth analysis using SQL and Python.",
+                    "Performed comprehensive competitive analysis.",
+                    "Collaborated with data science teams on ML models."
+                ],
+                skills: {
+                    technical: ["SQL", "Python", "Machine Learning", "Data Analysis"],
+                    collaboration: ["Data science collaboration", "Product strategy", "Competitive research"]
+                },
+                links: [],
+                shortTitle: "SPAM/SCAM Prevention"
+            },
+            project5: {
+                title: "New Market Launch for Vrew",
+                meta: "VoyagerX | 2021",
+                overview: "Led the market research, localization, and launch of Vrew, an AI-powered video editing application, in the Taiwan market.",
+                responsibilities: [
+                    "Conducted over 30 user testing sessions with local YouTube creators to understand user needs and preferences.",
+                    "Led a team of 2, a software developer and I, to develop go-to-market strategies for Taiwan launch and implemented the strategies.",
+                    "Achieved a 5%p increase in Monthly Active Users after one month."
+                ],
+                skills: {
+                    technical: ["SQL", "Google Analytics", "User Research", "Market Analysis", "Mandarin Language", "Localization"],
+                    collaboration: ["User testing coordination", "Go-to-market strategy", "Regional partnerships"]
+                },
+                links: [
+                    { text: "Vrew Taiwan", url: "https://vrew.ai/zh-TW/" }
+                ],
+                shortTitle: "Vrew Video Editor - Taiwan Launch"
+            },
+            project6: {
+                title: "GBH: Medical Debt Investigation",
+                meta: "Boston University | 2025",
+                overview: "Worked with the client, a journalist at GBH, to investigate the court data in Massachusetts to figure out the trends of medical debt, focusing on ambulance services and veterinary care debt.",
+                responsibilities: [
+                    "Analyzed overall court data using SQL and Python, to find the trends of medical debt filings in Massachusetts.",
+                    "Created data visualizations and .csv files to communicate findings with the client, a journalist at GBH.",
+                    "As a deliverable/slides coordinator, I ensured the quality of every deliverable and presentations, including github repository and shared Google Drive folders for better collaboration and client communication."
+                ],
+                skills: {
+                    technical: ["Python", "SQL", "Looker Studio"],
+                    collaboration: ["Data presentation", "Client communication", "Deliverable coordination"]
+                },
+                links: [
+                    { text: "Ambulance Debt Article", url: "https://www.wgbh.org/news/health/2025-11-24/need-an-ambulance-in-massachusetts-it-could-leave-you-thousands-in-debt" },
+                    { text: "Pet Debt Article", url: "https://www.wgbh.org/news/local/2025-12-15/pet-debt-is-on-the-rise-its-landing-more-people-in-court" }
+                ],
+                shortTitle: "GBH: Medical Debt Investigation"
+            },
+            project7: {
+                title: "Localization for Taiwanese Users",
+                meta: "VoyagerX | 2021",
+                overview: "Created comprehensive video tutorials to help Taiwanese users get started with Vrew's AI-powered video editing features.",
+                responsibilities: [
+                    "Produced tutorials by Vrew in Taiwanese version as dogfooding and shared feedback and possible improvements with the team.",
+                    "Demonstrated key features and workflows and gathered user feedback to improve tutorial content."
+                ],
+                skills: {
+                    technical: ["Video Production", "Content Creation", "Localization"],
+                    collaboration: ["User education", "Feedback collection", "Community engagement"]
+                },
+                links: [
+                    { text: "Tutorial 1", url: "https://youtu.be/7mSzyBrVYF8?si=nEXOcerzpyeCGx_T" },
+                    { text: "Tutorial 2", url: "https://youtu.be/doPzrI3zNnM?si=XdDPCY208_eCGvfI" },
+                    { text: "Tutorial 3", url: "https://youtu.be/FXpU-ItSork?si=9VV20jpGS-3KTWdC" },
+                    { text: "Tutorial 4", url: "https://youtu.be/-70D_ZGPBfY?si=CFIt2Yt-o4AXp4jm" }
+                ],
+                shortTitle: "Create Vrew Tutorials for Taiwanese Users"
+            },
+            project8: {
+                title: "LLM Measurements for AI Ethics",
+                meta: "Boston University | 2025",
+                overview: "As a team, we conducted research on ethical implications of AI systems, especially in the field of Privacy, developing comprehensive benchmarks to evaluate AI model behavior and fairness.",
+                responsibilities: [
+                    "Developed ethical benchmark framework, including prompt testing and documentation evaluation, in the field of Privacy for AI model evaluation.",
+                    "Collaborating with another teammate, we created a prompt testing methodology to have 2 LLMs generate responses to the prompt and have another LLM evaluate the responses as a judge.",
+                    "Wrote four parts of the research paper, regarding categories related to Privacy Risk & Attacks and AI Agent Data."
+                ],
+                skills: {
+                    technical: ["Python", "API Call", "LLM API", "Ethical AI Frameworks", "Benchmark Development"],
+                    collaboration: ["Academic research", "Ethics committees", "Interdisciplinary collaboration"]
+                },
+                links: [
+                    { text: "Research Paper", url: "https://drive.google.com/file/d/1JwAq4ewSHCd9zw3V1jx_fV_gp8j-hmCy/view?usp=sharing" },
+                    { text: "Github", url: "https://github.com/MarkYu1111/AI_Ethics_Six_Smarties" }
+                ],
+                shortTitle: "AI Ethics Research"
+            },
+            project9: {
+                title: "SYN-CUTE: Generate Images with DDPM",
+                meta: "Boston University | 2025",
+                overview: "As a part of DS542: Deep Learning in Data Science, I implemented an image generation model using Denoising Diffusion Probabilistic Models (DDPM) trained on 22,000 animal images to create cute and appealing visual content.",
+                responsibilities: [
+                    "Implemented DDPM (Denoising Diffusion Probabilistic Model) for image generation to reach the target Inception Score of 9, which was second highest in the class.",
+                    "Optimized model performance and generation quality by fine-tuning hyperparameters and using data augmentation techniques."
+                ],
+                skills: {
+                    technical: ["Python", "PyTorch", "DDPM", "Deep Learning", "Computer Vision"],
+                    collaboration: ["Independent research", "Dataset curation", "Model optimization"]
+                },
+                links: [],
+                shortTitle: "synCute: AI-Powered Design Tool"
+            },
+            project10: {
+                title: "User Analysis for vFlat and Ownglyph",
+                meta: "VoyagerX | 2021",
+                overview: "As one of the only two product managers in the company, I conducted user data analysis for other services from the company, including vFlat, a document scanning application, to improve user experience and retention.",
+                responsibilities: [
+                    "Analyzed user behavior patterns using SQL and Google Analytics, and identified key user segments and their needs.",
+                    "Led bi-weekly data analysis meetings with designers and developers to discuss user data and make data-driven decisions."
+                ],
+                skills: {
+                    technical: ["SQL", "Google Analytics", "User Behavior Analysis", "Data Visualization"],
+                    collaboration: ["Product team collaboration", "User research", "Data-driven decision making"]
+                },
+                links: [],
+                shortTitle: "User Analysis"
+            },
+            project11: {
+                title: "Brainwave Radio",
+                meta: "Mindful Makers Hackathon | 2025",
+                overview: "Developed a music generation system that creates personalized soundscapes based on real-time EEG data obtained through Neurables headset to enhance mindfulness and meditation experiences.",
+                responsibilities: [
+                    "Designed and implemented a brainwave-to-music pipeline using EEG data.",
+                    "Created emotion detection algorithms to map brainwave patterns to musical elements based on EEG data.",
+                    "Integrated AI music generation to produce adaptive soundscapes in real-time, both individual and group sessions.",
+                    "Working in a team of two, closely worked with a designer to deliver the first MVP of the project in 6 hours."
+                ],
+                skills: {
+                    technical: ["Python", "EEG Data Processing", "AI Music Generation", "Emotion Detection"],
+                    collaboration: ["Hackathon team collaboration", "Rapid prototyping", "Design collaboration"]
+                },
+                links: [
+                    { text: "GitHub", url: "https://github.com/NakyeongKimm/Mindfulness-Hack-BrainwaveRadio" }
+                ],
+                shortTitle: "Brainwave Radio"
+            },
+            project12: {
+                title: "ForesightX: Research Moneyball",
+                meta: "DS+X Hackathon | 2025",
+                overview: "Built a data-driven platform to optimize research topic selection using advanced analytics.",
+                responsibilities: [
+                    "Led a team of four to develop a data-driven platform to optimize research topic selection using advanced analytics.",
+                    "Developed predictive models to identify high-impact research topics by analzing academic papers and research data from OpenAlex API.",
+                    "Created data visualization dashboards for research metrics and trends.",
+                    "Presented findings to the hackathon judges and received positive feedback."
+                ],
+                skills: {
+                    technical: ["Python", "API Call", "Data Visualization", "Analytics"],
+                    collaboration: ["Hackathon collaboration", "Data science teamwork", "Presentation"]
+                },
+                links: [
+                    { text: "GitHub", url: "https://github.com/NakyeongKimm/DS-X-Research-Moneyball" }
+                ],
+                shortTitle: "Research Moneyball"
+            }
+        };
+
+        function showProject(projectId) {
+            const project = projects[projectId];
+            const galleryView = document.getElementById('gallery-view');
+            const detailView = document.getElementById('project-detail-view');
+            const contentDiv = document.getElementById('project-content');
+
+            // Build project content with links after overview
+            let content = `
+                <h2>${project.title}</h2>
+                <p class="project-meta">${project.meta}</p>
+                
+                <h3>Overview</h3>
+                <p>${project.overview}</p>
+            `;
+
+            // Add links right after overview if they exist
+            if (project.links.length > 0) {
+                content += `
+                    <div class="project-links">
+                        ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join('')}
+                    </div>
+                `;
+            }
+
+            // Add responsibilities and skills
+            content += `
+                <h3>Key Responsibilities</h3>
+                <ul>
+                    ${project.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                </ul>
+                
+                <h3>Skills</h3>
+                <div class="skills-section">
+                    <div class="skill-category">
+                        <h4>Technical Skills</h4>
+                        <div class="skill-tags">
+                            ${project.skills.technical.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Collaboration</h4>
+                        <div class="skill-tags">
+                            ${project.skills.collaboration.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            contentDiv.innerHTML = content;
+
+            // Toggle views
+            galleryView.style.display = 'none';
+            detailView.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showGallery() {
+            const galleryView = document.getElementById('gallery-view');
+            const detailView = document.getElementById('project-detail-view');
+
+            galleryView.style.display = 'block';
+            detailView.style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
