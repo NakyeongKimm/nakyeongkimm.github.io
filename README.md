@@ -1,4 +1,4 @@
-C# Portfolio Website
+# Portfolio Website
 
 A portfolio website to show my professional experience, projects, and contact information.
 
