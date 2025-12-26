@@ -368,14 +368,13 @@ footer p {
 
 /* More Link Styling */
 .more-link {
-    font-size: 0.9rem;
-    color: var(--color-accent);
-    font-weight: 500;
+    color: #666;
+    font-weight: 700;
     white-space: nowrap;
 }
 
 .more-link:hover {
-    color: var(--color-accent-hover);
+    color: #333;
 }
 
 /* Projects Detail Page */
