@@ -39,7 +39,7 @@
                                 <img src="images/TACT.png" alt="TACT" class="project-thumbnail">
                             </div>
                             <h3>TACT: Touch-free Acoustic Control Triggers for LLMs</h3>
-                            <p class="gallery-meta">Boston University | 2026.05</p>
+                            <p class="gallery-meta">Boston University | 2026.01 - 2026.05</p>
                         </div>
 
                         <div class="gallery-card" onclick="showProject('project14')">
@@ -429,7 +429,7 @@
             },
             project15: {
                 title: "TACT: Touch-free Acoustic Control Triggers for LLMs",
-                meta: "Boston University | 2026.05",
+                meta: "Boston University | 2026.01 - 2026.05",
                 role: "Solo Researcher & Developer",
                 overview: "Designed and built TACT, a standalone iOS prototype that maps non-verbal acoustic gestures to mid-conversation LLM controls. The system addresses two limits of current voice interfaces: the need for physical taps in hands-busy settings, and always-listening wake words that raise privacy concerns. Completed as part of CS 598 X1: Human-Computer Interaction and Human-AI Interaction.",
                 responsibilities: [
@@ -442,8 +442,15 @@
                     "Wave, double knock, and triple knock reached 100%, 90%, and 87% detection accuracy; body-produced sounds (clap 70%, tongue click 40%) exposed limits of a general-purpose classifier for individual acoustic variation.",
                     "Documented the work in a course presentation and final report."
                 ],
+                future: {
+                    text: "TACT's next steps are to move from a fixed-gesture prototype toward an adaptive, user-calibrated interaction layer. Separately, I am joining the <a href=\"https://eshed1.github.io/\" target=\"_blank\">H2X Lab</a> at Boston University as a research assistant to study related Human-AI interaction questions around hands-free, adaptive control of intelligent systems.",
+                    items: [
+                        "Replace Apple's general-purpose SoundAnalysis classifier with a fine-tunable model such as Google YAMNet so decision boundaries can adapt to individual acoustic profiles.",
+                        "Collect a larger, more diverse participant dataset and make gesture-to-action mappings user-configurable, so people who cannot reliably produce a given sound can substitute another trigger."
+                    ]
+                },
                 skills: {
-                    technical: ["Swift", "iOS", "Apple SoundAnalysis", "HCI Research", "User Study Design"],
+                    technical: ["Swift", "iOS", "Apple SoundAnalysis", "API Orchestration", "HCI Research", "User Study Design"],
                     collaboration: ["Solo research", "Prototype evaluation", "Academic writing"]
                 },
                 links: [
@@ -571,6 +578,20 @@
                         ${project.outcomes.map(o => `<li>${o}</li>`).join('')}
                     </ul>
                 `;
+            }
+
+            if (project.future) {
+                content += `
+                    <h3>Future Directions</h3>
+                    <p>${project.future.text}</p>
+                `;
+                if (project.future.items && project.future.items.length > 0) {
+                    content += `
+                        <ul>
+                            ${project.future.items.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    `;
+                }
             }
 
             // Add skills
