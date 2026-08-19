@@ -34,6 +34,14 @@
 
                     <div class="gallery-grid">
                         <!-- Reordered Project Cards -->
+                        <div class="gallery-card" onclick="showProject('project15')">
+                            <div class="gallery-image">
+                                <img src="images/TACT.png" alt="TACT" class="project-thumbnail">
+                            </div>
+                            <h3>TACT: Touch-free Acoustic Control Triggers for LLMs</h3>
+                            <p class="gallery-meta">Boston University | 2026.05</p>
+                        </div>
+
                         <div class="gallery-card" onclick="showProject('project14')">
                             <div class="gallery-image">
                                 <img src="images/cfjj.png" alt="CFJJ" class="project-thumbnail">
@@ -164,7 +172,7 @@
 
     <footer>
         <div class="container">
-            <p>Last Updated: March 2026</p>
+            <p>Last Updated: August 2026</p>
         </div>
     </footer>
 
@@ -418,6 +426,32 @@
                     { text: "GitHub", url: "https://github.com/NakyeongKimm/Mindfulness-Hack-BrainwaveRadio" }
                 ],
                 shortTitle: "Brainwave Radio"
+            },
+            project15: {
+                title: "TACT: Touch-free Acoustic Control Triggers for LLMs",
+                meta: "Boston University | 2026.05",
+                role: "Solo Researcher & Developer",
+                overview: "Designed and built TACT, a standalone iOS prototype that maps non-verbal acoustic gestures to mid-conversation LLM controls. The system addresses two limits of current voice interfaces: the need for physical taps in hands-busy settings, and always-listening wake words that raise privacy concerns. Completed as part of CS 598 X1: Human-Computer Interaction and Human-AI Interaction.",
+                responsibilities: [
+                    "Designed an interaction framework mapping knocks, claps, tongue clicks, and a proximity wave to pause, resume, speech-rate, repeat, and model-switch actions.",
+                    "Implemented the prototype in Swift using Apple's SoundAnalysis classifier, AVAudioEngine, the iPhone proximity sensor, and Gemini's voice-style pipeline.",
+                    "Ran a 5-participant study with a qualitative proficiency task and a quantitative reliability test (30 trials per gesture), logging classifications to tune detection thresholds."
+                ],
+                outcomes: [
+                    "All 5 participants completed the interactive task after less than two minutes of onboarding (100% task success).",
+                    "Wave, double knock, and triple knock reached 100%, 90%, and 87% detection accuracy; body-produced sounds (clap 70%, tongue click 40%) exposed limits of a general-purpose classifier for individual acoustic variation.",
+                    "Documented the work in a course presentation and final report."
+                ],
+                skills: {
+                    technical: ["Swift", "iOS", "Apple SoundAnalysis", "HCI Research", "User Study Design"],
+                    collaboration: ["Solo research", "Prototype evaluation", "Academic writing"]
+                },
+                links: [
+                    { text: "Report", url: "files/TACT_report.pdf" },
+                    { text: "Presentation", url: "files/TACT_presentation.pdf" },
+                    { text: "GitHub", url: "https://github.com/NakyeongKimm/TACT" }
+                ],
+                shortTitle: "TACT"
             },
             project14: {
                 title: "CFJJ: POST Officer Disciplinary Records Analysis",

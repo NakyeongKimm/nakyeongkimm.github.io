@@ -14,7 +14,7 @@
     --color-accent-hover: #ff9f8e;
     --color-border: #d4cbb8;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --max-width: 720px;
+    --max-width: 1080px;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
@@ -152,7 +152,7 @@ section {
 #hero .subtitle {
     font-size: 1.1rem;
     color: var(--color-text-light);
-    max-width: 600px;
+    max-width: 100%;
     line-height: 1.6;
 }
 
@@ -580,12 +580,12 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    max-width: 700px;
+    max-width: 100%;
 }
 
 .news-row {
     display: grid;
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: auto 1fr;
     gap: var(--spacing-sm);
     align-items: start;
     line-height: 1.7;
@@ -733,7 +733,8 @@ footer p {
     }
 
     .news-row {
-        grid-template-columns: 90px 1fr;
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
     }
 }
 
