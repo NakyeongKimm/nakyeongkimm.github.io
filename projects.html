@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
@@ -34,6 +34,14 @@
 
                     <div class="gallery-grid">
                         <!-- Reordered Project Cards -->
+                        <div class="gallery-card" onclick="showProject('project16')">
+                            <div class="gallery-image">
+                                <img src="images/ProfAI.png" alt="ProfAI Design System" class="project-thumbnail">
+                            </div>
+                            <h3>ProfAI Design System</h3>
+                            <p class="gallery-meta">Boston University | 2026.10 - 2026.11</p>
+                        </div>
+
                         <div class="gallery-card" onclick="showProject('project15')">
                             <div class="gallery-image">
                                 <img src="images/TACT.png" alt="TACT" class="project-thumbnail">
@@ -170,9 +178,17 @@
         </section>
     </main>
 
+    <div id="lightbox" class="lightbox" onclick="if (event.target === this) closeLightbox()">
+        <button class="lb-close" onclick="closeLightbox()" aria-label="Close">×</button>
+        <button class="lb-prev" onclick="stepLightbox(-1)" aria-label="Previous">‹</button>
+        <img id="lb-img" src="" alt="">
+        <button class="lb-next" onclick="stepLightbox(1)" aria-label="Next">›</button>
+        <div id="lb-caption" class="lightbox-caption"></div>
+    </div>
+
     <footer>
         <div class="container">
-            <p>Last Updated: August 2026</p>
+            <p>Last Updated: November 9, 2026</p>
         </div>
     </footer>
 
@@ -427,6 +443,42 @@
                 ],
                 shortTitle: "Brainwave Radio"
             },
+            project16: {
+                title: "ProfAI Design System",
+                meta: "Boston University | 2026.10 - 2026.11",
+                role: "Product Designer (Solo)",
+                overview: "While taking the course 'Big Data Analytics', I noticed some uncomfortable points when using ProfAI, the web app my professor built and uses across multiple courses. Tracing them back, I found the cause was an inconsistent design system, with missing values for margins and no shared rules. I asked if I could fix this, defined ground rules, and reverse-engineered the live CSS and screens into a design system (tokens, rules, and components) that I delivered to the professor.",
+                responsibilities: [
+                    "Reverse-engineered the live site's CSS and screens (Chat, Prof AI calls, Library, Practice, Class) to audit inconsistencies in spacing, type, and layout.",
+                    "Defined design tokens for color, type, spacing, radius, and elevation, with light and dark themes shipped as CSS variables.",
+                    "Wrote a rule set (layout, text wrapping, header, composer, mobile, icons, in-class screen) with rule IDs so each rule can be checked in review.",
+                    "Built the component library and screens in Figma at desktop (1440) and mobile (390 x 844) in both themes, using AI prototyping and Claude as an AI harness to speed up iteration.",
+                    "Wrote a DESIGN.md handoff so developers and AI coding tools can follow the system directly."
+                ],
+                outcomes: [
+                    "The professor accepted my proposal, and the design system is now live on the website for students.",
+                    "Delivered a proposal document, a Figma file, a tokens.css file, and a DESIGN.md for ongoing development."
+                ],
+                skills: {
+                    technical: ["Design Systems", "Figma", "Reverse Engineering", "AI Prototyping", "AI Harness (Claude)", "Design Tokens", "CSS", "Dark Mode", "Responsive Design", "Documentation"],
+                    collaboration: ["Stakeholder communication", "Developer handoff", "Cross-functional collaboration"]
+                },
+                figureNote: "The PDF and images shown may be distorted from the original .fig file.",
+                figures: [
+                    { src: "images/profai/page-5.png", caption: "Ground rules: index of global and in-class rules" },
+                    { src: "images/profai/page-6.png", caption: "R1: Page margin 16 / 32 / 48 px" },
+                    { src: "images/profai/page-7.png", caption: "R2: Title width at most 50% of content" },
+                    { src: "images/profai/page-8.png", caption: "R3: Image inset 8 px" },
+                    { src: "images/profai/page-9.png", caption: "R4: Body line height 14 / 22 px" },
+                    { src: "images/profai/page-10.png", caption: "Global text-wrapping rules" },
+                    { src: "images/profai/color.png", caption: "Color tokens: light and dark themes" },
+                    { src: "images/profai/icons.png", caption: "Icon rules and catalog (Lucide, 16px, token colors)" }
+                ],
+                links: [
+                    { text: "Proposal", url: "files/ProfAI_Design_System_Proposal.pdf" }
+                ],
+                shortTitle: "ProfAI Design System"
+            },
             project15: {
                 title: "TACT: Touch-free Acoustic Control Triggers for LLMs",
                 meta: "Boston University | 2026.01 - 2026.05",
@@ -556,6 +608,16 @@
                 `;
             }
 
+            // Add figures (right after links) if they exist
+            if (project.figures && project.figures.length > 0) {
+                content += `
+                    <div class="project-figures">
+                        ${project.figures.map((f, i) => `<figure><img src="${f.src}" alt="${f.caption}" loading="lazy" onclick="openLightbox('${projectId}', ${i})"><figcaption>${f.caption}</figcaption></figure>`).join('')}
+                    </div>
+                    ${project.figureNote ? `<p class="disclaimer">${project.figureNote}</p>` : ''}
+                `;
+            }
+
             // Add Job Title/Role
             content += `
                 <h3>Job Title/Role</h3>
@@ -620,6 +682,38 @@
             detailView.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        let lbProject = null, lbIndex = 0;
+
+        function openLightbox(projectId, index) {
+            lbProject = projectId;
+            lbIndex = index;
+            renderLightbox();
+            document.getElementById('lightbox').classList.add('open');
+        }
+
+        function renderLightbox() {
+            const figs = projects[lbProject].figures;
+            lbIndex = (lbIndex + figs.length) % figs.length;
+            document.getElementById('lb-img').src = figs[lbIndex].src;
+            document.getElementById('lb-caption').textContent = figs[lbIndex].caption + ' (' + (lbIndex + 1) + '/' + figs.length + ')';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+
+        function stepLightbox(d) {
+            lbIndex += d;
+            renderLightbox();
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (!document.getElementById('lightbox').classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') stepLightbox(-1);
+            if (e.key === 'ArrowRight') stepLightbox(1);
+        });
 
         function showGallery() {
             const galleryView = document.getElementById('gallery-view');
